@@ -99,9 +99,9 @@ class OrdersView(View):
         action = form_data['action']
         token = form_data['token']
         orders = Order(token=token, price=price, action=action, gameName=gameName)
-        users = UserStates.objects.get(token=token)
+        users = UserState.objects.get(token=token)
         if action == "buy":
-            users.products += (',' if users.products != "" else "") + games.gameName
+            users.products += (',' if users.products != "" else "") + gameName
             users.money -= price
             users.save()
         else:
