@@ -1,0 +1,5 @@
+venv/
+.idea/
+cockroach-v21.1.7.linux-amd64
+.env
+__pycache__

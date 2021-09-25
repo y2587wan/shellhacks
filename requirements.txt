@@ -1,0 +1,16 @@
+psycopg2-binary
+django
+django-cockroachdb
+dj-database-url
+python-dotenv
+firebase
+python_jwt
+gcloud
+sseclient
+pycrypto
+requests_toolbelt
+dj_database_url
+python-dotenv
+django_cockroachdb
+gunicorn
+django-cors-headers
