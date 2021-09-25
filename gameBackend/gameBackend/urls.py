@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import UserStatesView
+from .views import UserStatesView, GameProductsView, OrdersView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('userstates/', UserStatesView.as_view(), name='userstates'),
-    path('userstates/<uuid:token>/', UserStatesView.as_view(), name='userstates'),
+    path('userstates/<str:token>/', UserStatesView.as_view(), name='userstates'),
+
+    path('gameproducts/', GameProductsView.as_view(), name='gameproducts'),
+    path('gameproducts/<str:gameName>/', GameProductsView.as_view(), name='gameproducts'),
+
+    path('orders/', OrdersView.as_view(), name='orders'),
+    path('orders/<str:token>/', OrdersView.as_view(), name='orders'),
 ]
