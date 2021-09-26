@@ -1,0 +1,16 @@
+.inventory {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 70px;
+    border: 1px solid lightgray;
+}
+
+.inventory__name {
+    flex: 2;
+}
+
+.inventory__image {
+    margin-right: 20px;
+}
