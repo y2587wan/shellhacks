@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import "./Inventories.css"
 import Inventory from './Inventory'
 import database from "./firebase";
-
+import "./Inventories.css"
 function Inventories() {
     const [inventories, setInventories] = useState([])
     const showItems = () => {
@@ -15,13 +14,18 @@ function Inventories() {
     useEffect(() => showItems(), []);
     return (
         <div className="inventories">
-            {inventories.map((inventory) => (
+            { inventories.length !== 0 ?
+            (inventories.map((inventory) => (
                 <Inventory
                     name={inventory.name}
                     price={inventory.price}
                     picture={inventory.url}
                 />
-            ))}          
+            ))) : (
+                <h1 className="noitem">
+                    You don't have any items
+                </h1>
+            )}          
         </div>
     )
 }

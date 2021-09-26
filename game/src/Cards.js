@@ -38,9 +38,7 @@ function Cards({showItems, items, calculateAmount, amount}) {
 
       }
       
-    const onCardLeftScreen = (myIdentifier) => {
-        console.log(myIdentifier + ' left the screen')
-      }
+    const onCardLeftScreen = (myIdentifier) => {}
     return (
         <div>
             

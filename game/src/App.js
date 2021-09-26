@@ -3,21 +3,16 @@ import Cards from './Cards'
 import Inventories from './Inventories'
 import Header from './Header';
 import Footer from './Footer';
+import Help from './Help';
 import './App.css';
 import database from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-
-
-
 
 function App() {
   const dailyReduceAmount = 10;
   const [amount, setAmount] = useState(100);
   const calculateAmount = (x) => {
     setAmount(prev => prev + x);
-    if (amount <= 0) {
-      console.log("You lose")
-    }
   } 
   const [date, setDate] = useState(1);
   const addDate = () => {
@@ -42,14 +37,18 @@ function App() {
   const showItems = () => {
     database.collection('items').onSnapshot(snapshot => {
         setItems(snapshot.docs.map(doc => doc.data()).sort(() => Math.random() - 0.5))
+        console.log()
     });
   }
 
   return (
     <div className="App">
       <Router>
-      
         <Switch>
+        <Route path="/help">
+            <Header date={date} forwardButton="/"/>
+            <Help />
+          </Route>
           <Route path="/items">
             <Header date={date} backButton="/"/>
             <Inventories />

@@ -9,7 +9,7 @@ function Footer({amount, setDate, finish, restart}) {
     return (
         <div className="swipeButtons">
             { amount <= 0 ? (
-                <h1 className="amount">You lose with Amount: {amount.toFixed(2)}</h1>
+                <h1 className="amount">You end with money: {amount.toFixed(2)}</h1>
                 
             ) : (
                 <h1 className="amount">Amount: {amount.toFixed(2)}</h1>
